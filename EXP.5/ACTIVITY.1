@@ -1,0 +1,34 @@
+# A library dictionary stores book name and price. Update book price.
+"""
+Created on Mon Mar 23 15:56:12 2026
+
+@author: Shraddha
+"""
+
+# Library dictionary (Book name : Price)
+library = {
+    "Python Basics": 250,
+    "Data Structures": 400,
+    "Algorithms": 500
+}
+
+# Display current books
+print("Current Library Data:")
+for book, price in library.items():
+    print(f"{book} : ₹{price}")
+
+# Input book to update
+book_name = input("\nEnter book name to update price: ")
+
+# Check and update price
+if book_name in library:
+    new_price = float(input("Enter new price: "))
+    library[book_name] = new_price
+    print("\nPrice updated successfully!")
+else:
+    print("\nBook not found in library.")
+
+# Display updated dictionary
+print("\nUpdated Library Data:")
+for book, price in library.items():
+    print(f"{book} : ₹{price}")
