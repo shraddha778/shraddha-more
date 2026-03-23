@@ -1,0 +1,26 @@
+# Copy backup data from one file to another.
+"""
+Created on Mon Mar 23 15:45:34 2026
+
+@author: Shraddha
+"""
+
+# Program to copy data from one file to another
+
+# Input file names
+source_file = input("Enter source file name: ")
+destination_file = input("Enter destination file name: ")
+
+try:
+    # Open source file in read mode
+    with open(source_file, "r") as src:
+        data = src.read()
+
+    # Open destination file in write mode
+    with open(destination_file, "w") as dest:
+        dest.write(data)
+
+    print("\nFile copied successfully!")
+
+except FileNotFoundError:
+    print("\nError: Source file not found.")
