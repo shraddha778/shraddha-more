@@ -1,0 +1,50 @@
+# Create a student attendance file and append new records.
+"""
+Created on Mon Mar 23 15:37:31 2026
+
+@author: Shraddha
+"""
+
+# File name
+file_name = "attendance.txt"
+
+# Function to add attendance record
+def add_attendance():
+    name = input("Enter student name: ")
+    date = input("Enter date (YYYY-MM-DD): ")
+    status = input("Enter status (Present/Absent): ")
+
+    with open(file_name, "a") as file:
+        file.write(f"{name},{date},{status}\n")
+
+    print("Attendance recorded successfully!\n")
+
+# Function to display attendance records
+def display_attendance():
+    try:
+        with open(file_name, "r") as file:
+            print("\n--- Attendance Records ---")
+            for line in file:
+                name, date, status = line.strip().split(",")
+                print(f"Name: {name}, Date: {date}, Status: {status}")
+            print()
+    except FileNotFoundError:
+        print("No attendance file found.\n")
+
+# Main menu
+while True:
+    print("1. Add Attendance")
+    print("2. View Attendance")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_attendance()
+    elif choice == "2":
+        display_attendance()
+    elif choice == "3":
+        print("Exiting program.")
+        break
+    else:
+        print("Invalid choice. Try again.\n")
