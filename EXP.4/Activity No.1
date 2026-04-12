@@ -1,0 +1,17 @@
+#A teacher stores marks of students in a list. Find average and topper marks.
+"""
+Created on Mon Apr 13 00:56:00 2026
+
+@author: Shraddha
+"""
+
+marks = [85, 92, 78, 95, 88, 70, 99]
+topper_marks = max (marks)
+
+total_sum = sum(marks)
+num_students = len(marks)
+average_marks = total_sum/ num_students
+
+print (f"Total Students: {num_students}")
+print("Topper Marks: {topper_marks}")
+print(f"Average Marks: {average_marks:.2f}")
