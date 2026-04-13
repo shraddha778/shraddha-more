@@ -1,0 +1,14 @@
+#A class attendance system stores roll numbers in sets. Find students present
+"""
+Created on Mon Apr 13 18:27:15 2026
+
+@author: Shraddha
+"""
+
+math_attendance = {101, 102, 105, 108, 110}
+science_attendance = {102, 103, 108, 112, 115} 
+
+both_present = math_attendance & science_attendance
+#both_present = math_attendance. intersection(science_attendance)
+
+print (f"Students in both classes: {both_present}")
