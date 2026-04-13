@@ -1,0 +1,18 @@
+#A shop inventory dictionary stores item name and quantity. Add new stock..
+"""
+Created on Mon Apr 13 18:43:47 2026
+
+@author: Shraddha
+"""
+
+inventory = {
+    "Apples": 50,
+    "Bread": 20,
+    "Milk": 15
+}
+def update_stock(item, quantity):
+    inventory[item] = inventory.get(item, 0) + quantity 
+    print(f"Updated {item}. New total: {inventory[item]}")
+update_stock("Apples", 30)
+update_stock("Eggs", 12)
+print("\nFinal Inventory:", inventory)
