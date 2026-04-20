@@ -1,0 +1,25 @@
+#  Calculate distance using math formulas.
+"""
+Created on Mon Apr 20 15:08:47 2026
+
+@author: Shraddha
+"""
+
+import math
+
+# Function to calculate distance
+def calculate_distance(x1, y1, x2, y2):
+    distance = math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
+    return distance
+
+# Sample coordinates
+x1, y1 = 2, 3
+x2, y2 = 7, 9
+
+# Calculate distance
+dist = calculate_distance(x1, y1, x2, y2)
+
+# Output
+print("Point 1: (", x1, ",", y1, ")")
+print("Point 2: (", x2, ",", y2, ")")
+print("Distance between points: {:.2f}".format(dist))
