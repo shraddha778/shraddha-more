@@ -1,0 +1,35 @@
+#  Use math module to calculate EMI interest.
+"""
+Created on Mon Apr 20 15:02:41 2026
+
+@author: Shraddha
+"""
+
+import math
+
+# Function to calculate EMI
+def calculate_emi(P, R, N):
+    # R is annual interest rate, convert to monthly
+    r = R / (12 * 100)
+    
+    # EMI formula using math.pow
+    emi = P * r * math.pow(1 + r, N) / (math.pow(1 + r, N) - 1)
+    return emi
+
+# Sample values
+principal = 500000      # Loan amount
+annual_rate = 10        # Interest rate in %
+tenure_months = 60      # Loan tenure in months
+
+emi = calculate_emi(principal, annual_rate, tenure_months)
+
+total_payment = emi * tenure_months
+total_interest = total_payment - principal
+
+print("Loan Amount:", principal)
+print("Interest Rate:", annual_rate, "%")
+print("Tenure:", tenure_months, "months")
+
+print("\nMonthly EMI: {:.2f}".format(emi))
+print("Total Payment: {:.2f}".format(total_payment))
+print("Total Interest: {:.2f}".format(total_interest))
