@@ -1,0 +1,61 @@
+Store daily expenses in a file and calculate total monthly expense
+"""
+Created on Mon May  4 09:40:13 2026
+
+@author: Shraddha
+"""
+
+import datetime
+
+file_name = "expenses.txt"
+
+def add_expense():
+    date = input("Enter date (YYYY-MM-DD) or press Enter for today: ")
+    if date == "":
+        date = str(datetime.date.today())
+    
+    amount = float(input("Enter expense amount: "))
+    description = input("Enter description: ")
+
+    with open(file_name, "a") as file:
+        file.write(f"{date},{amount},{description}\n")
+    
+    print("Expense added successfully!\n")
+
+
+def calculate_monthly_total():
+    month = input("Enter month (YYYY-MM): ")
+    total = 0
+
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                date, amount, description = line.strip().split(",")
+                if date.startswith(month):
+                    total += float(amount)
+        
+        print(f"Total expense for {month}: ₹{total}")
+    
+    except FileNotFoundError:
+        print("No expense file found!")
+
+
+def menu():
+    while True:
+        print("\n1. Add Expense")
+        print("2. Calculate Monthly Total")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_expense()
+        elif choice == "2":
+            calculate_monthly_total()
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice! Try again.")
+
+
+menu()
