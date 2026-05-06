@@ -1,0 +1,20 @@
+#A bank gives loan approval only if salary 25,000. Print Approved/Rejected.
+"""
+Created on Wed May  6 16:42:08 2026
+
+@author: Shraddha
+"""
+
+#Taking input from the user
+
+salary = int(input("Enter your monthly salary: "))
+
+#Checking the condition if salary> 25000: print("Approved") else:
+
+if salary> 25000:
+
+ print("Approved")
+
+else:
+
+ print("Rejected")
