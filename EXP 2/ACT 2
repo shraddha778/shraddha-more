@@ -1,0 +1,27 @@
+ ## A movie ticket system allows entry only if age > 18.
+"""
+
+Created on Wed May  6 16:38:33 2026
+
+@author: Shraddha
+"""
+
+def check_movie_eligibility():
+
+  try:
+
+   age = int(input("Please enter your age: "))
+
+   if age >= 18:
+
+    print("Access Granted. Enjoy the movie!")
+
+   else:
+
+    print("Access Denied. You must be at least 18 years old.")
+
+  except ValueError:
+
+   print("Invalid input. Please enter a number for your age.")
+
+check_movie_eligibility()
