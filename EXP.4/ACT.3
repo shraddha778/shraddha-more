@@ -1,0 +1,34 @@
+ # Python program to remove duplicate mobile numbers from a contact list
+"""
+Created on Thu May  7 09:06:13 2026
+
+@author: Shraddha
+"""
+
+# Python program to remove duplicate mobile numbers from a contact list
+
+# Sample contact list
+contacts = [
+    {"name": "Amit", "mobile": "9876543210"},
+    {"name": "Rahul", "mobile": "9123456780"},
+    {"name": "Sneha", "mobile": "9876543210"},
+    {"name": "Priya", "mobile": "9988776655"},
+    {"name": "Karan", "mobile": "9123456780"}
+]
+
+print("Original Contact List:\n")
+for contact in contacts:
+    print(contact)
+
+# Remove duplicates based on mobile number
+unique_contacts = []
+seen_numbers = set()
+
+for contact in contacts:
+    if contact["mobile"] not in seen_numbers:
+        unique_contacts.append(contact)
+        seen_numbers.add(contact["mobile"])
+
+print("\nContact List After Removing Duplicate Mobile Numbers:\n")
+for contact in unique_contacts:
+    print(contact)
