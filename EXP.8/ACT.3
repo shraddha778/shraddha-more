@@ -1,0 +1,27 @@
+# Handle invalid product index in shopping cart.
+"""
+Created on Thu May  7 09:52:06 2026
+
+@author: Shraddha
+"""
+
+# Python program to handle invalid product index in a shopping cart
+
+cart = ["Laptop", "Mouse", "Keyboard", "Headphones"]
+
+print("Shopping Cart:")
+for i in range(len(cart)):
+    print(i, ":", cart[i])
+
+try:
+    index = int(input("Enter product index to remove: "))
+
+    if index < 0 or index >= len(cart):
+        print("Invalid product index!")
+    else:
+        removed_item = cart.pop(index)
+        print(removed_item, "removed from cart.")
+        print("Updated Cart:", cart)
+
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
