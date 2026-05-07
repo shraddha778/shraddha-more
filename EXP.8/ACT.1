@@ -1,0 +1,21 @@
+# Python program to handle invalid age input in a registration form
+"""
+Created on Thu May  7 09:39:12 2026
+
+@author: Shraddha
+"""
+
+# Python program to handle invalid age input in a registration form
+
+try:
+    age = int(input("Enter your age: "))
+
+    if age <= 0:
+        print("Invalid age! Age must be greater than 0.")
+    elif age < 18:
+        print("Registration failed! You must be at least 18 years old.")
+    else:
+        print("Registration successful!")
+
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
