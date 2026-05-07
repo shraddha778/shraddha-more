@@ -1,0 +1,24 @@
+# ATM withdrawal system handles insufficient balance.
+"""
+Created on Thu May  7 09:45:17 2026
+
+@author: Shraddha
+"""
+
+# Python program for ATM withdrawal system
+# Handles insufficient balance condition
+
+balance = 5000  # Initial account balance
+
+print("Available Balance:", balance)
+
+amount = float(input("Enter withdrawal amount: "))
+
+if amount <= 0:
+    print("Invalid withdrawal amount!")
+elif amount > balance:
+    print("Insufficient balance! Transaction failed.")
+else:
+    balance -= amount
+    print("Withdrawal successful!")
+    print("Remaining Balance:", balance)
